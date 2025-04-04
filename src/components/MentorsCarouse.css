@@ -1,0 +1,68 @@
+.h-1{
+    text-align: center;
+    padding-bottom: 30px;
+    color: #c07f00;
+}
+.img-1{
+
+  background-color: white;
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1); 
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  border: none;
+
+
+    
+}
+.react-multiple-carousel__arrow--left {
+    left: calc(4% + 20px);
+
+   
+}
+.react-multiple-carousel__arrow--right {
+    right: calc(4% + 1px);
+  
+}
+
+
+
+.img-1:hover{
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.4s ease;
+  transform: scale(1.10);
+}
+/* .mentors-bg{
+  background-color: rgb(234, 238, 238);
+} */
+
+/* .img-1 img:hover{
+   
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+    
+} */
+/* .txt{
+   
+    top: 50%;
+    transform: translateY(20%);
+    background-color: rgba(100, 99, 99, 0.3);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+} */
+.react-multi-carousel-list{
+padding-left: 0px;
+}
+

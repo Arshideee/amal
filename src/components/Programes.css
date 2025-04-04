@@ -1,0 +1,29 @@
+.admission {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #4c3d3d;
+}
+
+.admission-heading {
+    color: #c07f00;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.program-section {
+    margin-bottom: 20px;
+}
+.program-heading {
+    color: #c07f00;
+    margin-bottom: 10px;
+}
+.program-list {
+    list-style-type: none;
+    padding: 0;
+}
+.program-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}

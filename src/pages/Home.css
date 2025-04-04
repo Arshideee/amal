@@ -1,0 +1,55 @@
+.applyForm {
+  background-color: white;
+  color: gray;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+.form-bg {
+  background-color: #e7e7e5;
+}
+.form-padding {
+  padding: 0px 0px;
+}
+@media screen and (min-width: 1200px) {
+  .form-padding {
+    padding: 0px 50px;
+  }
+}
+.nav-tabs .nav-link.active {
+  background-color: #c07f00;
+  color: white;
+  border-radius: 10px;
+}
+.nav-link {
+  color: black;
+  background: none;
+  border: none;
+  border-radius: 0px;
+  font-weight: 500;
+}
+.nav-tabs {
+  border: none;
+}
+.nav-link:hover {
+  color: rgb(59, 58, 58);
+}
+.nav-tabs .nav-link {
+  border: none;
+}
+.loginForm {
+  background-color: white;
+  color: gray;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+.login-col1 img {
+  width: 180px;
+ 
+  filter: drop-shadow(5px 10px 8px rgba(0, 0, 0, 0.5));
+}
+.loginbox{
+    background-color:#d4d1a8 ;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
