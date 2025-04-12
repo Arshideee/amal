@@ -2,27 +2,30 @@ import React from "react";
 import ApplyForm from "../components/ApplyForm";
 import "./Home.css";
 import { Col, Container, Row, Tab, Tabs } from "react-bootstrap";
-import { PersonCircle } from "react-bootstrap-icons";
-
+import { PersonCircle, BoxArrowInRight } from "react-bootstrap-icons";
+import ad from "../images/ad.jpg";
+import logo2 from "../images/logo22.png";
 import LoginForm from "../components/LoginForm";
 import HomeCarousel from "../components/HomeCarousel";
 import MentorsCarous from "../components/MentorsCarous";
 import Programes from "../components/Programes";
 import Footer from "../components/Footer";
+import imgLogo from '../images/logos/companyLogo.jpg'
 function Home() {
   return (
     <>
-    <div className="hhhh">
-    
-    </div>
+      <div className="hhhh"></div>
       <div>
         <HomeCarousel />
       </div>
       <div>
-      <MentorsCarous/>
+        <MentorsCarous />
       </div>
       <div>
-        <Programes/>
+        <Programes />
+      </div>
+      <div>
+        <img className="w-100" src={imgLogo} alt=""  />
       </div>
       <div className="form-bg pt-3">
         <Container className="p-4 p-md-3 p-lg-5">
@@ -41,23 +44,31 @@ function Home() {
               <Tab eventKey="profile" title="Already Applied">
                 <div className="loginForm ">
                   <Container>
-                    <Row className="text-center pt-5">
-                      <div className="fw-bold">
-                        If you are already applied, please log in!
-                      </div>
-                    </Row>
-                    <Row className="p-5">
-                      <Col md={4} className="align-content-center">
-                        <div className=" d-flex justify-content-center">
-                          <PersonCircle size={150} color="gray" />
-                        </div>
-                        {/* <div className="login-col1 fw-bold d-flex justify-content-center align-middle ">
-                          If you are already applied, please log in!
+                    <Row>
+                      <Col md={5} className="login-1">
+                        <div>
+                          {/* <div>
+                          <img className="w-100 img-border" src={ad} alt="" />
                         </div> */}
+                          <div className="text-center  pt-5 ">
+                            <div className="logo2 pt-3">
+                              <img src={logo2} alt="" />
+                            </div>
+                          </div>
+
+                          <div className="login-col1 text-center p-2 pt-3 pb-5 fw-bold d-flex justify-content-center align-middle ">
+                          Built by entrepreneurs, for entrepreneurs. EBS delivers practical knowledge and proven strategies to help you grow.
+                          </div>
+                        </div>
                       </Col>
-                      <Col className="login-col2 align-content-center">
-                        <div className="loginbox p-3">
-                          <LoginForm />
+                      <Col md={7} className="login-col2 p-3 align-content-center">
+                        <div className="login-col1 text-center fw-bold d-flex justify-content-center align-middle p-3 ">
+                          If you are already applied, please log in!
+                        </div>
+                        <div className="p-2 pt-lg-4 pb-md-5">
+                          <div className="loginbox ">
+                            <LoginForm />
+                          </div>
                         </div>
                       </Col>
                     </Row>
@@ -69,7 +80,7 @@ function Home() {
         </Container>
       </div>
       <div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

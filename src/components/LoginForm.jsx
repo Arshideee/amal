@@ -3,15 +3,28 @@ import "./LoginForm.css";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import * as formik from "formik";
 import * as yup from "yup";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 function LoginForm() {
   const { Formik } = formik;
   const schema = yup.object().shape({
-    phone: yup.string().required("enter your number"),
-    otp: yup.string().required("enter OTP number"),
+    email: yup.string().required("enter your email"),
+    password: yup.string().required("enter OTP password"),
   });
-  const submitForm = (data) => {
-    console.log(data);
+  const submitForm = async (value) => {
+    console.log(value);
+      try{
+          const {data} = await axios.post("http://localhost:4000/api/users/login",value);
+          if(!data.success){
+           return toast.error(data.message);
+          }
+          toast.success(data.message);
+        
+         
+        }catch(error){
+          toast.error(error.message);
+        }
   };
   return (
     <div>
@@ -23,8 +36,8 @@ function LoginForm() {
               validationSchema={schema}
               onSubmit={submitForm}
               initialValues={{
-                phone: "",
-                otp: "",
+                email: "",
+                password: "",
               }}
             >
               {({
@@ -42,62 +55,62 @@ function LoginForm() {
                       controlId="validationFormik03"
                       className="position-relative"
                     >
-                      <Form.Label>Phone:</Form.Label>
+                      <Form.Label>Email:</Form.Label>
 
                       <Form.Control
-                        type="number"
-                        name="phone"
-                        placeholder="Phone"
-                        value={values.phone}
+                        type="email"
+                        name="email"
+                        placeholder="email"
+                        value={values.email}
                         onChange={handleChange}
-                        isValid={touched.phone && !errors.phone}
-                        isInvalid={!!errors.phone}
+                        isValid={touched.email && !errors.email}
+                        isInvalid={!!errors.email}
                       />
 
                       <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                       <Form.Control.Feedback type="invalid" tooltip>
-                        {errors.phone}
+                        {errors.email}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
-                  <div>
-                    <Button className="fw-bolder btnn-width">Send OTP</Button>
-                  </div>
+                  {/* <div>
+                    <Button className="fw-bolder btnn-width">Password</Button>
+                  </div> */}
                   <Row className="mb-3">
                     <Form.Group
                       as={Col}
                       controlId="validationFormik04"
                       className="position-relative otp-field"
                     >
-                      <Form.Label>OTP:</Form.Label>
+                      <Form.Label>Password</Form.Label>
 
                       <Form.Control
-                        type="text"
-                        name="otp"
-                        placeholder="Enter OTP"
-                        value={values.otp}
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={values.password}
                         onChange={handleChange}
-                        isValid={touched.otp && !errors.otp}
-                        isInvalid={!!errors.otp}
-                        inputMode="numeric"
-                        pattern="\d*"
-                        maxLength={6}
-                        aria-describedby="otpFeedback"
+                        isValid={touched.password && !errors.password}
+                        isInvalid={!!errors.password}
+                        // inputMode="numeric"
+                        // pattern="\d*"
+                        // maxLength={6}
+                        // aria-describedby="otpFeedback"
                       />
 
                       <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                       <Form.Control.Feedback
-                        id="otpFeedback"
+                        // id="otpFeedback"
                         type="invalid"
                         tooltip
                       >
-                        {errors.otp}
+                        {errors.password}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
 
                   <div className="text-end">
-                    <Button type="submit">Apply now</Button>
+                    <Button type="submit">Log in</Button>
                   </div>
                 </Form>
               )}
