@@ -106,7 +106,7 @@ function MentorsCarous() {
             <Col md={12} className="d-flex justify-content-center" key={i}>
             <Card className="img-1 fade-in">
                   <Card.Img
-                    className="img-stl"
+                    className="w-100 img-stl"
                     variant="top"
                     src={image.photo}
                   />

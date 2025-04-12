@@ -9,10 +9,11 @@ import { toast } from "react-toastify";
 function LoginForm() {
   const { Formik } = formik;
   const schema = yup.object().shape({
-    email: yup.string().required("enter your email"),
+    email: yup.string().email("Enter a valid Email").required("enter your email"),
     password: yup.string().required("enter OTP password"),
   });
   const submitForm = async (value) => {
+  
     console.log(value);
       try{
           const {data} = await axios.post("http://localhost:4000/api/users/login",value);
@@ -58,9 +59,10 @@ function LoginForm() {
                       <Form.Label>Email:</Form.Label>
 
                       <Form.Control
+                       className="f-cntrl"
                         type="email"
                         name="email"
-                        placeholder="email"
+                        placeholder="Email"
                         value={values.email}
                         onChange={handleChange}
                         isValid={touched.email && !errors.email}
@@ -85,6 +87,7 @@ function LoginForm() {
                       <Form.Label>Password</Form.Label>
 
                       <Form.Control
+                      className="f-cntrl"
                         type="password"
                         name="password"
                         placeholder="Password"

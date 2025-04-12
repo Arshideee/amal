@@ -65,7 +65,7 @@ function Footer() {
                 </div>
               </Col>
               <Col xs={12} md={4}>
-                <div className="contacts position-relative text-end ">
+                <div className="contacts position-relative text-center ">
                   <h2 className="contacts-h2">Contacts</h2>
 
                   <p className="ps-0">

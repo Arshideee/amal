@@ -19,6 +19,7 @@ function ApplyForm() {
     city: yup.string().required("select your city"),
   });
   const submitForm = async (value) => {
+    toast.success("Account Signed up");
     console.log(value);
     try{
       const {data} = await axios.post("http://localhost:4000/api/users/register",value);
@@ -26,12 +27,13 @@ function ApplyForm() {
        return toast.error(data.message);
       }
       toast.success(data.message);
+  
     
-     
     }catch(error){
       toast.error(error.message);
+    
     }
-   
+   toast.error("database not connected")
   };
   return (
     <div>
@@ -70,7 +72,7 @@ function ApplyForm() {
                     <Form.Control
                       type="text"
                       name="username"
-                      placeholder="enter your name"
+                      placeholder="Enter your name"
                       value={values.username}
                       onChange={handleChange}
                       isValid={touched.username && !errors.username}
@@ -92,9 +94,10 @@ function ApplyForm() {
                     <Form.Label>Phone:</Form.Label>
 
                     <Form.Control
+                   
                       type="tel"
                       name="phone"
-                      placeholder="phone"
+                      placeholder="Phone"
                       value={values.phone}
                       onChange={handleChange}
                       isValid={touched.phone && !errors.phone}
@@ -276,7 +279,7 @@ function ApplyForm() {
                       <Form.Control
                         type="email"
                         name="email"
-                        placeholder="enter your email"
+                        placeholder="Enter your email"
                         value={values.email}
                         onChange={handleChange}
                         isValid={touched.email && !errors.email}
@@ -305,7 +308,7 @@ function ApplyForm() {
                     <Form.Control
                       type="password"
                       name="password"
-                      placeholder="password"
+                      placeholder="Password"
                       value={values.password}
                       onChange={handleChange}
                       isValid={touched.password && !errors.password}

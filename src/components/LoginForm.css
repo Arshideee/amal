@@ -1,6 +1,6 @@
 .login input {
   background-color: white;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .login input:focus {
     color: black;
@@ -11,6 +11,11 @@
 }
 .login.form-control {
     color: white;
+    border: none;
+}
+.login.form-label {
+    margin-bottom: .5rem;
+    color: black;
 }
 .btnn-width{
     padding: 8px 30px;
@@ -27,4 +32,7 @@
 }
 .btn:first-child:active{
     background-color: #6d5555;
+}
+.f-cntrl{
+    border: none;
 }
