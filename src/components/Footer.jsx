@@ -27,7 +27,7 @@ function Footer() {
                     <ul>
                       <li>
                         <Link to="#">
-                          <Facebook  size={40} />
+                          <Facebook size={40} />
                         </Link>
                       </li>
                       <li>
@@ -83,10 +83,19 @@ function Footer() {
                 </div>
               </Col>
             </Row>
+            <hr />
+            <Row>
+              <a
+                href="/poster.pdf"
+                target="_blank"
+                className="text-center text-dark text-decoration-none fw-bold"
+              >
+                <small>View Document</small>
+              </a>
+            </Row>
           </Container>
         </div>
       </div>
-     
     </div>
   );
 }

@@ -10,7 +10,7 @@ import HomeCarousel from "../components/HomeCarousel";
 import MentorsCarous from "../components/MentorsCarous";
 import Programes from "../components/Programes";
 import Footer from "../components/Footer";
-import imgLogo from '../images/logos/companyLogo.jpg'
+import imgLogo from '../images/logos/companyLogo1.jpeg'
 function Home() {
   return (
     <>

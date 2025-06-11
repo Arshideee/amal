@@ -19,7 +19,7 @@ function ApplyForm() {
     city: yup.string().required("select your city"),
   });
   const submitForm = async (value) => {
-    toast.success("Account Signed up");
+    // toast.success("Account Signed up");
     console.log(value);
     try{
       const {data} = await axios.post("http://localhost:4000/api/users/register",value);
@@ -33,7 +33,7 @@ function ApplyForm() {
       toast.error(error.message);
     
     }
-   toast.error("database not connected")
+  //  toast.error("database not connected")
   };
   return (
     <div>
@@ -76,12 +76,12 @@ function ApplyForm() {
                       value={values.username}
                       onChange={handleChange}
                       isValid={touched.username && !errors.username}
-                      isInvalid={!!errors.username}
+                     isInvalid={touched.username && !!errors.username}
                     />
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                    {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid" tooltip>
                       {errors.username}
-                    </Form.Control.Feedback>
+                    </Form.Control.Feedback> */}
                   </Form.Group>
                 </Row>
                 <Row className="mb-3">
@@ -101,13 +101,13 @@ function ApplyForm() {
                       value={values.phone}
                       onChange={handleChange}
                       isValid={touched.phone && !errors.phone}
-                      isInvalid={!!errors.phone}
+                      isInvalid={touched.phone && !!errors.phone}
                     />
 
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                    {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid" tooltip>
                       {errors.phone}
-                    </Form.Control.Feedback>
+                    </Form.Control.Feedback> */}
                   </Form.Group>
 
                   <Form.Group
@@ -123,7 +123,7 @@ function ApplyForm() {
                       value={values.programme}
                       onChange={handleChange}
                       isValid={touched.programme && !errors.programme}
-                      isInvalid={!!errors.programme}
+                     isInvalid={touched.programme && !!errors.programme}
                     >
                       <option value="" disabled>
                         Select an option...
@@ -175,10 +175,10 @@ function ApplyForm() {
                         MBA in Consultancy Services
                       </option>
                     </Form.Control>
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                    {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid" tooltip>
                       {errors.programme}
-                    </Form.Control.Feedback>
+                    </Form.Control.Feedback> */}
                   </Form.Group>
                 </Row>
                 <Row className="mb-3">
@@ -195,7 +195,7 @@ function ApplyForm() {
                       value={values.state}
                       onChange={handleChange}
                       isValid={touched.state && !errors.state}
-                      isInvalid={!!errors.state}
+                      isInvalid={touched.state && !!errors.state}
                     >
                       <option value="" disabled>
                         Select an option...
@@ -233,10 +233,10 @@ function ApplyForm() {
                       <option value="uttarakhand">Uttarakhand</option>
                       <option value="west_bengal">West Bengal</option>
                     </Form.Control>
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                    {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid" tooltip>
                       {errors.state}
-                    </Form.Control.Feedback>
+                    </Form.Control.Feedback> */}
                   </Form.Group>
                   <Form.Group
                     as={Col}
@@ -251,7 +251,7 @@ function ApplyForm() {
                       value={values.city}
                       onChange={handleChange}
                       isValid={touched.city && !errors.city}
-                      isInvalid={!!errors.city}
+                             isInvalid={touched.city && !!errors.city}
                     >
                       <option value="" disabled>
                         Select an option...
@@ -260,10 +260,10 @@ function ApplyForm() {
                       <option value="Calicut">Manjeri</option>
                       <option value="Calicut">perinthalmanna</option>
                     </Form.Control>
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    <Form.Control.Feedback type="invalid" tooltip>
+                    {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
+                    {/* <Form.Control.Feedback type="invalid" tooltip>
                       {errors.city}
-                    </Form.Control.Feedback>
+                    </Form.Control.Feedback> */}
                   </Form.Group>
                 </Row>
 
@@ -283,7 +283,7 @@ function ApplyForm() {
                         value={values.email}
                         onChange={handleChange}
                         isValid={touched.email && !errors.email}
-                        isInvalid={!!errors.email}
+                         isInvalid={touched.email && !!errors.email}
                       />
                       {/* <span className="position-absolute otp-btn ">
                         <Button className="fw-bolder btn-width">
@@ -291,10 +291,10 @@ function ApplyForm() {
                         </Button>
                       </span>
                     </div> */}
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                    {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid" tooltip>
                       {errors.email}
-                    </Form.Control.Feedback>
+                    </Form.Control.Feedback> */}
                   </Form.Group>
 
                   <Form.Group
@@ -312,13 +312,13 @@ function ApplyForm() {
                       value={values.password}
                       onChange={handleChange}
                       isValid={touched.password && !errors.password}
-                      isInvalid={!!errors.password}
+                      isInvalid={touched.password && !!errors.password}
                       // inputMode="numeric"
                       // pattern="\d*"
                       // maxLength={6}
                       // aria-describedby="otpFeedback"
                     />
-
+{/* 
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     <Form.Control.Feedback
                       // id="otpFeedback"
@@ -326,7 +326,7 @@ function ApplyForm() {
                       tooltip
                     >
                       {errors.password}
-                    </Form.Control.Feedback>
+                    </Form.Control.Feedback> */}
                   </Form.Group>
                 </Row>
 
