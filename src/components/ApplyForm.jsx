@@ -18,6 +18,7 @@ function ApplyForm() {
     state: yup.string().required("select your state"),
     city: yup.string().required("select your city"),
   });
+  
   const submitForm = async (value) => {
     // toast.success("Account Signed up");
     console.log(value);
